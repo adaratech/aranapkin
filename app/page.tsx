@@ -46,6 +46,17 @@ export default function Home() {
   return (
     <main className="min-h-screen flex flex-col items-center px-4 py-8 md:py-12">
       {/* Header */}
+      <div className="w-full max-w-2xl flex justify-end mb-2">
+        <button
+          onClick={async () => {
+            await fetch("/api/auth/logout", { method: "POST" });
+            window.location.href = "/login";
+          }}
+          className="px-3 py-1 text-sm rounded border border-[#e0dbd4] text-[#95a5a6] hover:text-[#2c3e50] hover:border-[#bdc3c7] transition-colors cursor-pointer"
+        >
+          Esci
+        </button>
+      </div>
       <div className="text-center mb-8">
         <h1 className="text-4xl md:text-5xl font-bold text-[#2c3e50] mb-2">
           AraNapkin
